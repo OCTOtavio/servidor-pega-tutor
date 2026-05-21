@@ -1,0 +1,19 @@
+[
+  {
+    "tutor": "ANDREA",
+    "email": "andrea@escola.com",
+    "alunos": [
+      "GIOVANA SANTOS SILVA",
+      "LIVIA VITORIA BISPO MONTEIRO"
+    ]
+  },
+
+  {
+    "tutor": "CLÁUDIO",
+    "email": "claudio@escola.com",
+    "alunos": [
+      "CYNTHIA VITORIA MACAMBIRA",
+      "LUIS MIGUEL DA SILVA RODRIGUES"
+    ]
+  }
+]
