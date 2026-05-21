@@ -1,164 +1,74 @@
 {
   "Title": "Registros - Desvio de conduta/Situação Atípica",
-  "Description": "Formulário para registro de ocorrências disciplinares, pedagógicas e de convivência.",
-  "Collect_Email": true,
 
   "Sections": [
     {
-      "Index": 0,
-      "Type": "Section",
       "Title": "Informações Iniciais",
 
       "Content": [
+
         {
-          "Index": 0,
           "Type": "Email",
           "Title": "No campo abaixo, PREENCHER COM SEU EMAIL",
           "Required": true
         },
 
         {
-          "Index": 1,
           "Type": "Checkbox",
+
           "Title": "Selecione o tutor",
-          "Description": "DETALHE: CASO MARQUE A OPÇÃO \"Outro\", DIGITE EXATAMENTE ASSIM: \"Nome - e-mail\", CASO SEJA VÁRIOS E-MAILS, SEPARAR POR VÍRGULA (\", \")",
+
+          "Description": "DETALHE: CASO MARQUE A OPÇÃO \"Outro\", DIGITE EXATAMENTE ASSIM: \"Nome - e-mail\"",
+
           "Required": true,
           "Multiple_Choice": true,
           "Other_Choice": true,
 
-          "Choices": [
-            "Andrea - andrealemovieira@gmail.com",
-            "Cláudio - favoretto@prof.educacao.sp.gov.br",
-            "Cristiana - chiari@prof.educacao.sp.gov.br",
-            "Daniela - danielalopes@prof.educacao.sp.gov.br",
-            "Everton - evertonrsouza@prof.educacao.sp.gov.br",
-            "Fernanda - fferrucci@prof.educacao.sp.gov.br",
-            "Glauber - glauberfontana@prof.educacao.sp.gov.br",
-            "Jackson - jacksonsoares@prof.educacao.sp.gov.br",
-            "Jonathan - jonatansantos@prof.educacao.sp.gov.br",
-            "Júlia - juliaseverino@prof.educacao.sp.gov.br",
-            "Keyla - tathyana@prof.educacao.sp.gov.br",
-            "Laís - laisgiacomini@prof.educacao.sp.gov.br",
-            "Livia - liviatinelli@prof.educacao.sp.gov.br",
-            "Luiz Eduardo - luizalbert@prof.educacao.sp.gov.br",
-            "Marco - marcoavieira@prof.educacao.sp.gov.br",
-            "Mariane - marianeprado@prof.educacao.sp.gov.br",
-            "Rejane - rejanetrombini@prof.educacao.sp.gov.br",
-            "Roberta - robertaredivo@prof.educacao.sp.gov.br",
-            "Samuel - samuelfilipe@prof.educacao.sp.gov.br",
-            "Tamar - tamarr@prof.educacao.sp.gov.br"
-          ]
+          "Dynamic_Source": {
+            "URL": "https://octotavio.github.io/servidor-pega-tutor/tutores.json",
+
+            "Mode": "tutor_emails",
+
+            "Format": "{tutor} - {email}"
+          }
         }
       ]
     },
 
     {
-      "Index": 1,
-      "Type": "Section",
-      "Title": "TUTOR E TUTORADOS",
+      "Title": "Tutor e Tutorados",
+
+      "Dynamic_Sections": {
+
+        "URL": "https://octotavio.github.io/servidor-pega-tutor/tutores.json",
+
+        "Mode": "tutor_students",
+
+        "Template": {
+
+          "Type": "Checkbox",
+
+          "Title": "{tutor}",
+
+          "Multiple_Choice": true,
+
+          "Choices_From": "alunos"
+        }
+      }
+    },
+
+    {
+      "Title": "Ocorrência",
 
       "Content": [
 
         {
-          "Index": 0,
-          "Type": "Checkbox",
-          "Title": "ANDREA",
-          "Multiple_Choice": true,
-          "Choices": [
-            "GIOVANA SANTOS SILVA",
-            "LIVIA VITORIA BISPO MONTEIRO",
-            "MARIA EDUARDA LUNA DOS SANTOS",
-            "MURILO RUBO DA SILVA",
-            "PEDRO HENRIQUE BRASILEIRO",
-            "EMYLLI DAMARES ROCATE DA SILVA",
-            "GUSTAVO MELO SALVADOR",
-            "NICOLE VITORIA RODRIGUES DOS REIS",
-            "AMANDA DE JESUS DIAS",
-            "JULIA VALENTINA ROSA KANECZUI",
-            "VITORIA SOUZA DA SILVA",
-            "GABRIELA VIEIRA RIBEIRO",
-            "ANA LAURA MORAIS DOS SANTOS",
-            "JOAO PEDRO MARIANO PINTO",
-            "DHANDARA MARIANNY SOUZA ROSSINI"
-          ]
-        },
-
-        {
-          "Index": 1,
-          "Type": "Checkbox",
-          "Title": "CLÁUDIO",
-          "Multiple_Choice": true,
-          "Choices": [
-            "CYNTHIA VITORIA MACAMBIRA",
-            "LUIS MIGUEL DA SILVA RODRIGUES",
-            "RYAN FERREIRA DE LIMA",
-            "CARLOS EDUARDO SANDERS BERTACINE",
-            "PEDRO HENRIQUE JOSE DOS SANTOS GONCALVES",
-            "LUÍS GUSTAVO DE OLIVEIRA",
-            "CHARLES BATISTA GOMES DA SILVA SOUSA",
-            "ENZO GABRIEL SANTOS DE JESUS",
-            "GUSTAVO SANTIAGO NICOLETTI",
-            "JÚLIO SANTOS ALMEIDA",
-            "MIGUEL WILLIAN DA SILVA",
-            "RYANDERSON FERREIRA DE OLIVEIRA",
-            "CLAUDIO EZEQUIEL OLIMPIO DE SOUZA"
-          ]
-        },
-
-        {
-          "Index": 2,
-          "Type": "Checkbox",
-          "Title": "CRISTIANA",
-          "Multiple_Choice": true,
-          "Choices": [
-            "ALICE SABINO DE OLIVEIRA",
-            "EMILLY VITORIA FERREIRA PAIVA",
-            "JUAN MIGUEL COUTO DA SILVA",
-            "KAMILLY VITORIA SANTOS RODRIGUES",
-            "ALICE OLIVEIRA LIMA",
-            "ANA LARA LIMA DA SILVA",
-            "JOÃO PEDRO RODRIGUES DOMICIANO DA SILVA",
-            "ALICE DANIELI VIANA GARCIA",
-            "ANA CLARA MELO DE JESUS",
-            "ISAAC OLIVEIRA DE JESUS",
-            "LANNA MAYUMI ASSADA",
-            "LORENA TAKAHASHI DA SILVA",
-            "AMANDA VITORIA DA SILVA CAMARGO",
-            "NICOLE MISTRIN GABRIEL",
-            "NICOLY GOMES FERREIRA"
-          ]
-        },
-
-        {
-          "Index": 3,
-          "Type": "Checkbox",
-          "Title": "DANIELA",
-          "Multiple_Choice": true,
-          "Choices": [
-            "ISABELLY CINTRA DOS SANTOS",
-            "LUANA VITORIA DE OLIVEIRA MELO",
-            "ENZO ALMEIDA",
-            "LAYSA LIMA DA COSTA",
-            "VINICIUS ALMEIDA DA SILVA",
-            "MIKAELLY CAVALCANTI DOS SANTOS",
-            "EMILLY VICTORIA SANTOS DE SOUZA",
-            "LAURA BELTRÃO DA SILVA",
-            "SOPHIA EMANUELLE DE JESUS DE SOUZA",
-            "NICOLLY ALMEIDA DOS SANTOS",
-            "RICHARD FELIPE DOS SANTOS GOMES",
-            "ANDRESSA ALESSANDRA GRACA DOS SANTOS",
-            "ISABELLY DE OLIVEIRA ALMEIDA",
-            "MANUELA FERNANDA PEREIRA DA SILVA",
-            "ÁGATHA BEATRIZ PEREIRA",
-            "JÚLIA PINESSO DE FREITAS"
-          ]
-        },
-
-        {
-          "Index": 4,
           "Type": "Dropdown",
+
           "Title": "Turma",
+
           "Required": true,
+
           "Choices": [
             "6ºA",
             "6ºB",
@@ -174,56 +84,47 @@
         },
 
         {
-          "Index": 5,
           "Type": "Text",
           "Title": "Disciplina",
           "Required": true
         },
 
         {
-          "Index": 6,
           "Type": "Date",
           "Title": "Data",
           "Required": true
         },
 
         {
-          "Index": 7,
           "Type": "Checkbox",
+
           "Title": "Motivo",
+
           "Required": true,
+
           "Multiple_Choice": true,
+
           "Other_Choice": true,
 
           "Choices": [
-            "Questões disciplinares - Saída injustificada de atividade pedagógica/sala de aula",
-            "Questões disciplinares - Utilização indevida de aparallhos eletrônicos",
-            "Questões disciplinares - Desrespeito ao professor com palavrões e/ou gestos",
-            "Questões disciplinares - Atraso para entrar na aula",
-            "Questões pedagógicas - Atrapalha o desenvolvimento da aula",
-            "Questões pedagógicas - Não realizou as atividades",
+            "Questões disciplinares - Saída injustificada",
+            "Questões disciplinares - Utilização indevida de aparelhos eletrônicos",
             "Questões de convivência - Agressão física",
-            "Questões de convivência - Agressão verbal",
-            "Questões de convivência - Ameaças",
-            "Questões de convivência - Bullying/ Humilhação sistemática",
-            "Questões de convivência - Discriminação",
-            "Danos e outros crimes contra o patrimônio - Furto/ Vandalismo/ Depredação",
-            "Posse ou encontro de armas ou objetos perigosos",
-            "Consumo/venda de álcool, outras drogas e/ou consumo de drogas ilícitas"
+            "Questões de convivência - Bullying",
+            "Outro"
           ]
         },
 
         {
-          "Index": 8,
           "Type": "Paragraph",
           "Title": "Descreva o acontecimento",
           "Required": true
         },
 
         {
-          "Index": 9,
           "Type": "MultipleChoice",
           "Title": "É necessário atendimento com Vice Diretor - CONVIVA",
+
           "Choices": [
             "Sim",
             "Não"
@@ -231,10 +132,11 @@
         },
 
         {
-          "Index": 10,
           "Type": "MultipleChoice",
           "Title": "É necessária uma conversa do tutor com o aluno",
+
           "Required": true,
+
           "Choices": [
             "Sim",
             "Não"
@@ -242,10 +144,11 @@
         },
 
         {
-          "Index": 11,
           "Type": "MultipleChoice",
           "Title": "É necessária uma reunião com responsável, tutor, vice e professor?",
+
           "Required": true,
+
           "Choices": [
             "Sim",
             "Não"
