@@ -5,8 +5,7 @@
     {
       "Title": "Informações Iniciais",
 
-      "Content": [
-
+      "Questions": [
         {
           "Type": "Email",
           "Title": "No campo abaixo, PREENCHER COM SEU EMAIL",
@@ -15,58 +14,44 @@
 
         {
           "Type": "Checkbox",
-
           "Title": "Selecione o tutor",
 
-          "Description": "DETALHE: CASO MARQUE A OPÇÃO \"Outro\", DIGITE EXATAMENTE ASSIM: \"Nome - e-mail\"",
+          "Description": "DETALHE: CASO MARQUE A OPÇÃO \"Outro\", DIGITE EXATAMENTE ASSIM: \"Nome - e-mail\", CASO SEJA VÁRIOS E-MAILS, SEPARAR POR VÍRGULA (\", \")",
 
           "Required": true,
-          "Multiple_Choice": true,
+
           "Other_Choice": true,
 
           "Dynamic_Source": {
             "URL": "https://octotavio.github.io/servidor-pega-tutor/tutores.json",
 
-            "Mode": "tutor_emails",
-
-            "Format": "{tutor} - {email}"
+            "Mode": "Tutor_Email_List"
           }
         }
       ]
     },
 
     {
-      "Title": "Tutor e Tutorados",
+      "Title": "TUTOR E TUTORADOS",
 
       "Dynamic_Sections": {
-
         "URL": "https://octotavio.github.io/servidor-pega-tutor/tutores.json",
 
-        "Mode": "tutor_students",
+        "Mode": "Tutor_Alunos_Checkboxes",
 
-        "Template": {
+        "Question_Type": "Checkbox",
 
-          "Type": "Checkbox",
-
-          "Title": "{tutor}",
-
-          "Multiple_Choice": true,
-
-          "Choices_From": "alunos"
-        }
+        "Required": false
       }
     },
 
     {
-      "Title": "Ocorrência",
+      "Title": "Dados da Ocorrência",
 
-      "Content": [
-
+      "Questions": [
         {
-          "Type": "Dropdown",
-
+          "Type": "MultipleChoice",
           "Title": "Turma",
-
           "Required": true,
 
           "Choices": [
@@ -97,20 +82,24 @@
 
         {
           "Type": "Checkbox",
-
           "Title": "Motivo",
-
           "Required": true,
 
-          "Multiple_Choice": true,
-
-          "Other_Choice": true,
-
           "Choices": [
-            "Questões disciplinares - Saída injustificada",
-            "Questões disciplinares - Utilização indevida de aparelhos eletrônicos",
+            "Questões disciplinares - Saída injustificada de atividade pedagógica/sala de aula",
+            "Questões disciplinares - Utilização indevida de aparallhos eletrônicos",
+            "Questões disciplinares - Desrespeito ao professor com palavrões e/ou gestos",
+            "Questões disciplinares - Atraso para entrar na aula",
+            "Questões pedagógicas - Atrapalha o desenvolvimento da aula",
+            "Questões pedagógicas - Não realizou as atividades",
             "Questões de convivência - Agressão física",
-            "Questões de convivência - Bullying",
+            "Questões de convivência - Agressão verbal",
+            "Questões de convivência - Ameaças",
+            "Questões de convivência - Bullying/ Humilhação sistemática",
+            "Questões de convivência - Discriminação",
+            "Danos e outros crimes contra o patrimônio - Furto/ Vandalismo/ Depredação",
+            "Posse ou encontro de armas ou objetos perigosos",
+            "Consumo/venda de álcool, outras drogas e/ou consumo de drogas ilícitas",
             "Outro"
           ]
         },
@@ -154,7 +143,6 @@
             "Não"
           ]
         }
-
       ]
     }
   ]
