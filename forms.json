@@ -8,7 +8,7 @@
       "Questions": [
         {
           "Type": "Email",
-          "Title": "No campo abaixo, PREENCHER COM SEU NOME",
+          "Title": "No campo abaixo, PREENCHER COM SEU E-MAIL",
           "Required": true
         },
 
