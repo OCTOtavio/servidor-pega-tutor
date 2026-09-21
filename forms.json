@@ -50,7 +50,7 @@
 
       "Questions": [
         {
-          "Type": "MultipleChoice",
+          "Type": "Checkbox",
           "Title": "Turma",
           "Required": true,
 
